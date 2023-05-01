@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title> Intro section with dropdown navigation</title>
+
+
+</head>
+<body>
+
+  <header>
+
+  <div class="logo"> <a href=""> <img src="images/logo.svg" alt=""></a></div>
+  <nav>
+    <ul class="menu">
+      <li><a class="features" href="#">Features</a> <img src="images/icon-arrow-down.svg" alt="">
+        <ul class="submenu">
+          <li><img src="images/icon-todo.svg" alt=""> Todo List</li>
+          <li><img src="images/icon-calendar.svg" alt=""> Calendar</li>
+          <li><img src="images/icon-reminders.svg" alt=""> Reminders</li>
+          <li><img src="images/icon-planning.svg" alt=""> Planing</li>
+        </ul>
+        </li>
+      <li><a class="company" href="#">Company</a> <img src="images/icon-arrow-down.svg" alt="">
+          <ul class="second-submenu">
+          <li>History</li>
+          <li>Our team</li>
+          <li>Blog</li>
+        </ul>
+        </li>
+      <li><a href="#">Careers</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </nav>
+  <div class="auth-buttons">
+<button class="transparent">Login</button>
+<button class="register">Register</button>
+
+  </div>
+  <div class="hamburger">
+  <img src="images/icon-menu.svg" alt="">
+  
+  </div>
+</header>
+<script >
+const company = document.querySelector('.company');
+const img = company.nextElementSibling;
+
+const featureMenu = document.querySelector('.submenu');
+
+const featureLinks = document.querySelector('.features');
+const secondimg = featureLinks.nextElementSibling;
+const submenu = document.querySelector('.second-submenu');
+
+company.addEventListener('mouseenter', () => {
+  submenu.style.display = 'flex';
+  img.style.transform = 'rotate(180deg)';
+});
+
+submenu.addEventListener('mouseleave', () => {
+  submenu.style.display = 'none';
+  img.style.transform = 'rotate(0deg)';
+});
+
+featureLinks.addEventListener('mouseenter', () => {
+  featureMenu.style.display = 'block';
+  secondimg.style.transform = 'rotate(180deg)';
+
+});
+
+featureMenu.addEventListener('mouseleave', () => {
+  featureMenu.style.display = 'none';
+  secondimg.style.transform = 'rotate(0deg)';
+
+});
+</script>
+<main>
+
+  <div class="container">
+  <div class="left-column">
+    <h2>Make remote work</h2>
+    <p>Get your team in sync, no matter your location. Streamline process, create team rituals, and watch productivity soar.</p>
+    <button>Learn more</button>
+    <div class="logos">
+      <img src="images/client-databiz.svg">
+      <img src="images/client-audiophile.svg">
+      <img src="images/client-meet.svg">
+      <img src="images/client-maker.svg">
+    </div>
+  </div>
+  <div class="right-column">
+    <picture>
+  <source media="(max-width: 921px)" srcset="images/image-hero-mobile.png">
+  <source media="(min-width: 922px)" srcset="images/image-hero-desktop.png">
+  <img src="images/image-hero-desktop.png" alt="Hero Image">
+</picture>
+
+  </div>
+</div>
+
+</main>
+
+</body>
+</html>
